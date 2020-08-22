@@ -21,8 +21,7 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats:true)
     }
     
-    @obj
-    func update() {
+    @objc func update() {
       time += 0.1
     }
 
