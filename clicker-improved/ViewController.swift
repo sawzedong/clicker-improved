@@ -13,9 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet var screenTGR: UITapGestureRecognizer!
     
     var counter = 0
+    var time: Float = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countLabel.text = "\(counter)"
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats:true)
+    }
+    
+    @obj
+    func update() {
+      time += 0.1
     }
 
     @IBAction func screenTapped(_ sender: Any) {
@@ -23,6 +31,7 @@ class ViewController: UIViewController {
         countLabel.text = "\(counter)"
         
         if counter >= 30 {
+            print("Maximum reached in \(time) seconds.")
             print("Done")
             screenTGR.isEnabled = false
         }
