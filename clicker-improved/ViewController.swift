@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-var x = 9
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet var screenTGR: UITapGestureRecognizer!
+    
+    var counter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(x)
+        countLabel.text = "\(counter)"
     }
 
-
+    @IBAction func screenTapped(_ sender: Any) {
+        counter += 1
+        countLabel.text = "\(counter)"
+        
+        if counter >= 30 {
+            print("Done")
+            screenTGR.isEnabled = false
+        }
+    }
+    
 }
 
