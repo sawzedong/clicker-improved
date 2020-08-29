@@ -10,7 +10,12 @@ import UIKit
 
 class ScoreTableViewController: UITableViewController {
 
-    var scores: [Double] = []
+    var scores: [ClickScore] = [
+        ClickScore(score: 4.45, timestamp: "29 Aug 2020 16:01"),
+        ClickScore(score: 5.45, timestamp: "29 Aug 2020 16:02"),
+        ClickScore(score: 6.45, timestamp: "29 Aug 2020 16:03"),
+    ]
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,21 +40,35 @@ class ScoreTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreRow", for: indexPath)
-
-        if let label = cell.textLabel {
-            var currentScore = String(scores[indexPath.row])
+        if let cell = cell as? TableViewCell {
+            let currentRecord = scores[indexPath.row]
+            cell.positionLabel.text = "\(indexPath.row+1)"
+            
+            var currentScore = String(currentRecord.score)
             if currentScore.count == 1 {
                 currentScore += ".00"
             } else if currentScore.count == 3 {
                 currentScore += "0"
             }
-            label.text = "\(currentScore)"
+            cell.scoreLabel.text = currentScore
             
+            cell.timestampLabel.text = currentRecord.timestamp
+            if (indexPath.row == 0) {
+                cell.rootCellView.backgroundColor = .systemYellow
+            } else if (indexPath.row == 1) {
+                cell.rootCellView.backgroundColor = .systemOrange
+            } else if (indexPath.row == 2) {
+                cell.rootCellView.backgroundColor = .systemPink
+            }
         }
+        
+        
 
         return cell
     }
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -94,12 +113,30 @@ class ScoreTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+    func addPad0(_ num: Int) -> String {
+        var finalNumber = String(num)
+        if finalNumber.count == 1 {
+            finalNumber = "0\(finalNumber)"
+        }
+        return finalNumber
+    }
     @IBAction func unwindToScoreTable(segue: UIStoryboardSegue) {
         if segue.identifier == "exitClicker" {
             let source = segue.source as! ClickerViewController
-            scores.append(round(source.time*100)/100)
-            scores = scores.sorted()
+            
+            let date = Date()
+            let calendar = Calendar.current
+            let day = addPad0(calendar.component(.day, from: date))
+            let month = calendar.component(.month, from: date)
+            let year = calendar.component(.year, from: date)
+            let hour = addPad0(calendar.component(.hour, from: date))
+            let minutes = addPad0(calendar.component(.minute, from: date))
+            
+            scores.append(
+                ClickScore(score: round(source.time*100)/100, timestamp: "\(day) \(months[month-1]) \(year) \(hour):\(minutes)")
+            )
+            
+            scores = scores.sorted { $0.score < $1.score }
             tableView.reloadData()
         }
     }
