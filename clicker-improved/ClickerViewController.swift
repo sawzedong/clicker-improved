@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ClickerViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet var screenTGR: UITapGestureRecognizer!
@@ -28,9 +28,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func update() {
-      time += 0.1
-    }
 
     @IBAction func screenTapped(_ sender: Any) {
         counter += 1

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6D3606B624F0BEDD00E8E08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3606B524F0BEDD00E8E08E /* AppDelegate.swift */; };
 		6D3606B824F0BEDD00E8E08E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3606B724F0BEDD00E8E08E /* SceneDelegate.swift */; };
-		6D3606BA24F0BEDD00E8E08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3606B924F0BEDD00E8E08E /* ViewController.swift */; };
+		6D3606BA24F0BEDD00E8E08E /* ClickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3606B924F0BEDD00E8E08E /* ClickerViewController.swift */; };
 		6D3606BD24F0BEDD00E8E08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3606BB24F0BEDD00E8E08E /* Main.storyboard */; };
 		6D3606BF24F0BEF100E8E08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3606BE24F0BEF100E8E08E /* Assets.xcassets */; };
 		6D3606C224F0BEF100E8E08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3606C024F0BEF100E8E08E /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		6D3606B224F0BEDD00E8E08E /* clicker-improved.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clicker-improved.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3606B524F0BEDD00E8E08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D3606B724F0BEDD00E8E08E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6D3606B924F0BEDD00E8E08E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D3606B924F0BEDD00E8E08E /* ClickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerViewController.swift; sourceTree = "<group>"; };
 		6D3606BC24F0BEDD00E8E08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D3606BE24F0BEF100E8E08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D3606C124F0BEF100E8E08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				6D3606B524F0BEDD00E8E08E /* AppDelegate.swift */,
 				6D3606B724F0BEDD00E8E08E /* SceneDelegate.swift */,
-				6D3606B924F0BEDD00E8E08E /* ViewController.swift */,
+				6D3606B924F0BEDD00E8E08E /* ClickerViewController.swift */,
 				6D3606BB24F0BEDD00E8E08E /* Main.storyboard */,
 				6D7D4C7224FA124000EB996B /* ScoreTableViewController.swift */,
 				6D3606BE24F0BEF100E8E08E /* Assets.xcassets */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D7D4C7324FA124000EB996B /* ScoreTableViewController.swift in Sources */,
-				6D3606BA24F0BEDD00E8E08E /* ViewController.swift in Sources */,
+				6D3606BA24F0BEDD00E8E08E /* ClickerViewController.swift in Sources */,
 				6D3606B624F0BEDD00E8E08E /* AppDelegate.swift in Sources */,
 				6D3606B824F0BEDD00E8E08E /* SceneDelegate.swift in Sources */,
 			);

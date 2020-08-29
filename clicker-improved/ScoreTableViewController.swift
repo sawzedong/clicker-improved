@@ -37,8 +37,14 @@ class ScoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreRow", for: indexPath)
 
         if let label = cell.textLabel {
-            let currentScore = scores[indexPath.row]
+            var currentScore = String(scores[indexPath.row])
+            if currentScore.count == 1 {
+                currentScore += ".00"
+            } else if currentScore.count == 3 {
+                currentScore += "0"
+            }
             label.text = "\(currentScore)"
+            
         }
 
         return cell
@@ -90,7 +96,12 @@ class ScoreTableViewController: UITableViewController {
     */
     
     @IBAction func unwindToScoreTable(segue: UIStoryboardSegue) {
-        
+        if segue.identifier == "exitClicker" {
+            let source = segue.source as! ClickerViewController
+            scores.append(round(source.time*100)/100)
+            scores = scores.sorted()
+            tableView.reloadData()
+        }
     }
 
 }
