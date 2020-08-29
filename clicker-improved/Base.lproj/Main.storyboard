@@ -72,13 +72,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkH-Rg-MU6">
+                                <rect key="frame" x="20" y="758" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gW1-FL-a0y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5X7-Nw-1Vq"/>
                             <constraint firstItem="gW1-FL-a0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BYs-2T-f3o"/>
+                            <constraint firstItem="UkH-Rg-MU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="e1h-79-jo7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gW1-FL-a0y" secondAttribute="trailing" constant="20" id="eb5-yX-Xt8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UkH-Rg-MU6" secondAttribute="bottom" constant="20" id="fry-GI-AAi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UkH-Rg-MU6" secondAttribute="trailing" constant="20" id="kds-u6-ATV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -88,9 +97,12 @@
                     <connections>
                         <outlet property="countLabel" destination="gW1-FL-a0y" id="Mtj-3U-bln"/>
                         <outlet property="screenTGR" destination="dte-SP-Hdf" id="pL6-xe-Cac"/>
+                        <outlet property="timeLabel" destination="UkH-Rg-MU6" id="6AO-EW-Lbd"/>
+                        <segue destination="Lzt-BT-PXF" kind="unwind" identifier="exitClicker" unwindAction="unwindToScoreTableWithSegue:" id="igs-eW-gpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Lzt-BT-PXF" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="dte-SP-Hdf">
                     <connections>
                         <action selector="screenTapped:" destination="BYZ-38-t0r" id="x1U-1R-FTx"/>

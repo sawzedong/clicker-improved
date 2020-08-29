@@ -10,17 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet var screenTGR: UITapGestureRecognizer!
     
     var counter = 0
-    var time = 0.0
+    var time = 0.00
     var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countLabel.text = "\(counter)"
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            self.time += 0.1
+        timeLabel.text = "\(time)"
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+            self.time += 0.01
+            let displayTime = round(self.time*100)/100
+            self.timeLabel.text = "\(displayTime)"
         }
     }
     
