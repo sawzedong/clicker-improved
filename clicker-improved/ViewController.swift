@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     @IBOutlet var screenTGR: UITapGestureRecognizer!
     
     var counter = 0
-    var time: Float = 0
+    var time = 0.0
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countLabel.text = "\(counter)"
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats:true)
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.time += 0.1
+        }
     }
     
     @objc func update() {
