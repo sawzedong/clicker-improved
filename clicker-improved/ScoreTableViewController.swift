@@ -88,5 +88,9 @@ class ScoreTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindToScoreTable(segue: UIStoryboardSegue) {
+        
+    }
 
 }

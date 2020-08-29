@@ -36,6 +36,7 @@ class ViewController: UIViewController {
             print("Maximum reached in \(time) seconds.")
             print("Done")
             screenTGR.isEnabled = false
+            performSegue(withIdentifier: "exitClicker", sender: self)
         }
     }
     
